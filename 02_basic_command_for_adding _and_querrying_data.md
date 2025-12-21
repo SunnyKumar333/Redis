@@ -5,4 +5,5 @@
 ```redis
   SET key value
 ```
+![Set cmd image](https://github.com/SunnyKumar333/Redis/blob/main/images/set_cmd.png)
 
