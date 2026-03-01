@@ -16,6 +16,10 @@ jobs:
     environment: ${{inputs.env}}
     steps:
       - name: greet user
-        run: echo "Hello ${{vars.NAME}} User"
+        id: greet
+        run: echo "msg=Hello ${{vars.NAME}} User" >> $GITHUB_OUTPUTS
+
+      - name: Access steps context value
+        run: echo ${{steps.greet.outputs.msg}}
         
         
