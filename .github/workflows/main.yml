@@ -1,0 +1,21 @@
+name: "my first workflow"
+
+on:
+  workflow_dispatch:
+    inputs:
+      env: 
+        required: true
+        type: choice
+        options:
+          - "prd"
+          - "tst"
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    environment: ${{inputs.env}}
+    steps:
+      - name: greet user
+        run: echo "Hello ${{vars.NAME}} User"
+        
+        
